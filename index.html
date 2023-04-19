@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        table, td {
+               border: 2px solid black; 
+               color: aliceblue;
+        }
+
+        tr:nth-child(even){
+            background: coral
+        }
+        tr:nth-child(odd){
+            background: rgb(57, 103, 255)
+        }
+
+
+    </style>
+</head>
+<body>
+    
+<div id="box">
+    <!-- <table>
+        <tbody>
+            <tr>
+                <td>Ячейка 1</td>
+                <td>Ячейка 2</td>
+                <td>Ячейка 3</td>
+            </tr>
+            <tr>
+                <td>Ячейка 1</td>
+                <td>Ячейка 2</td>
+                <td>Ячейка 3</td>
+            </tr>
+            <tr>
+                <td>Ячейка 1</td>
+                <td>Ячейка 2</td>
+                <td>Ячейка 3</td>
+            </tr>
+
+        </tbody>
+
+    </table> -->
+</div>
+
+
+
+    <script>
+
+
+let rows = +prompt ("Сколько строк?");
+let colums = +prompt ("Сколько столбцов?");
+
+    let myTable = ""; //в дальнейшем будет строка
+
+     //делаем чтобы ячейки были пронумерованы внутри по порядку(добавим переменную и начнем отсчет)
+    let count = 1;
+
+    for (i=1; i<=rows; i++){
+
+        myTable += "<tr>";
+                //будет столбец в дальнейшем 
+            for (j=1; j<=colums; j++) {
+
+                myTable +=`<td> <a href="http://link${count}.html"> Ячейка ${count++} </a> </td>`;
+
+            }
+            
+
+        myTable += "</tr>";   
+    }
+
+myTable = `<table>
+                <tbody>
+                  ${myTable}  
+                </tbody>
+            </table>`
+
+// console.log(myTable);
+
+
+box.innerHTML = myTable;
+
+
+    </script>
+
+
+
+
+</body>
+</html>
